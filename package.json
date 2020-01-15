@@ -20,7 +20,42 @@
     },
     "universal-app": {
       "extends": [
-        "config:base"
+        "config:js-app",
+        ":timezone(Asia/Tokyo)",
+        ":semanticPrefixChore",
+        ":automergeMinor"
+      ],
+      "schedule": [
+        "after 9pm",
+        "before 9am"
+      ],
+      "packageRules": [
+        {
+          "groupName": "Linting (ESLint and Prettier)",
+          "packageNames": [
+            "eslint",
+            "prettier"
+          ],
+          "packagePatterns": [
+            "^eslint-config-",
+            "^eslint-plugin-",
+            "^@typescript-eslint/"
+          ]
+        }
+      ],
+      "packageRules": [
+        {
+          "groupName": "Testing (Jest and Enzyme)",
+          "packageNames": [
+            "jest",
+            "enzyme",
+            "ts-jest"
+          ],
+          "packagePatterns": [
+            "^jest-",
+            "^enzyme-"
+          ]
+        }
       ]
     }
   }
