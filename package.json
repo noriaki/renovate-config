@@ -41,9 +41,7 @@
             "^eslint-plugin-",
             "^@typescript-eslint/"
           ]
-        }
-      ],
-      "packageRules": [
+        },
         {
           "groupName": "Testing (Jest and Enzyme)",
           "packageNames": [
