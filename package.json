@@ -22,12 +22,11 @@
       "extends": [
         "config:js-app",
         ":timezone(Asia/Tokyo)",
+        "schedule:nonOfficeHours",
         ":semanticPrefixChore",
+        ":prHourlyLimitNone",
+        ":prConcurrentLimit10",
         ":automergeMinor"
-      ],
-      "schedule": [
-        "after 9pm",
-        "before 9am"
       ],
       "packageRules": [
         {
