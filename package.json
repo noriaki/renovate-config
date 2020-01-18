@@ -31,6 +31,10 @@
       "packageRules": [
         {
           "groupName": "Linting (ESLint and Prettier)",
+          "description": "ESLint / Prettier with TypeScript packages group",
+          "extends": [
+            "monorepo:typescript-eslint"
+          ],
           "packageNames": [
             "eslint",
             "prettier"
@@ -43,6 +47,10 @@
         },
         {
           "groupName": "Testing (Jest and Enzyme)",
+          "description": "unit / ui test packages group",
+          "extends": [
+            "monorepo:jest"
+          ],
           "packageNames": [
             "jest",
             "enzyme",
