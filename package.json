@@ -21,13 +21,13 @@
     "universal-app": {
       "extends": [
         "config:js-app",
-        ":timezone(Asia/Tokyo)",
         "schedule:nonOfficeHours",
         ":semanticPrefixChore",
         ":prHourlyLimitNone",
         ":prConcurrentLimit10",
         ":automergeMinor"
       ],
+      "timezone": "Asia/Tokyo",
       "packageRules": [
         {
           "groupName": "Linting (ESLint and Prettier)",
@@ -35,11 +35,11 @@
           "extends": [
             "monorepo:typescript-eslint"
           ],
-          "packageNames": [
+          "matchPackageNames": [
             "eslint",
             "prettier"
           ],
-          "packagePatterns": [
+          "matchPackagePatterns": [
             "^eslint-config-",
             "^eslint-plugin-",
             "^@typescript-eslint/"
@@ -51,12 +51,12 @@
           "extends": [
             "monorepo:jest"
           ],
-          "packageNames": [
+          "matchPackageNames": [
             "jest",
             "enzyme",
             "ts-jest"
           ],
-          "packagePatterns": [
+          "matchPackagePatterns": [
             "^jest-",
             "^enzyme-"
           ]
